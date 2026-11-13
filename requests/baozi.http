@@ -5,7 +5,7 @@ POST {{baseUrl}}/clientes
 Content-Type: application/json
 
 {
-  "nome": "Gabriel123456"
+  "nome": "Gabriel5153997"
 }
 
 ### 2) Criar produto

@@ -1,0 +1,67 @@
+@baseUrl = http://localhost:8080
+
+### 1) Criar cliente
+POST {{baseUrl}}/clientes
+Content-Type: application/json
+
+{
+  "nome": "Gabriel123456"
+}
+
+### 2) Criar produto
+POST {{baseUrl}}/produtos
+Content-Type: application/json
+
+{
+  "nome": "Baozi de Queijo",
+  "preco": 8.50,
+  "estoque": true
+}
+
+### 3) Criar pedido (cliente 1 compra 5 unidades do produto 1)
+POST {{baseUrl}}/pedidos
+Content-Type: application/json
+
+{
+  "clienteId": 1,
+  "produtoId": 1,
+  "quantidade": 5
+}
+
+### 4) Listar clientes
+GET {{baseUrl}}/clientes
+
+### 5) Listar produtos
+GET {{baseUrl}}/produtos
+
+### 6) Listar pedidos
+GET {{baseUrl}}/pedidos
+
+### 7) Consultar cliente por id
+GET {{baseUrl}}/clientes/1
+
+### 8) Consultar produto por id
+GET {{baseUrl}}/produtos/1
+
+### 9) Consultar pedido por id
+GET {{baseUrl}}/pedidos/1
+
+### 10) Apagar pedido 1
+DELETE {{baseUrl}}/pedidos/1
+
+### 11) Conferir que o pedido 1 não existe mais (esperado: 404)
+GET {{baseUrl}}/pedidos/1
+
+### 12) Apagar produto 1
+DELETE {{baseUrl}}/produtos/1
+
+### 13) Apagar cliente 1
+DELETE {{baseUrl}}/clientes/1
+
+### 14) Erro de validação (esperado: 400)
+POST {{baseUrl}}/clientes
+Content-Type: application/json
+
+{
+  "nome": ""
+}

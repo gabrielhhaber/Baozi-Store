@@ -1,0 +1,51 @@
+@startuml caso-de-uso
+title Diagrama de Caso de Uso - API REST Baozi Store
+!pragma layout smetana
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Usuário da API" as U
+
+rectangle "API REST - Baozi Store" {
+
+  package "Cliente" {
+    usecase "Cadastrar cliente\nPOST /clientes" as UC1
+    usecase "Consultar cliente por ID\nGET /clientes/{id}" as UC2
+    usecase "Listar clientes\nGET /clientes" as UC3
+    usecase "Apagar cliente\nDELETE /clientes/{id}" as UC4
+  }
+
+  package "Produto" {
+    usecase "Cadastrar produto\nPOST /produtos" as UC5
+    usecase "Consultar produto por ID\nGET /produtos/{id}" as UC6
+    usecase "Listar produtos\nGET /produtos" as UC7
+    usecase "Apagar produto\nDELETE /produtos/{id}" as UC8
+  }
+
+  package "Pedido" {
+    usecase "Registrar pedido\nPOST /pedidos" as UC9
+    usecase "Consultar pedido por ID\nGET /pedidos/{id}" as UC10
+    usecase "Listar pedidos\nGET /pedidos" as UC11
+    usecase "Apagar pedido\nDELETE /pedidos/{id}" as UC12
+    usecase "Verificar cliente e produto" as UC13
+    usecase "Verificar estoque do produto" as UC14
+  }
+}
+
+U --> UC1
+U --> UC2
+U --> UC3
+U --> UC4
+U --> UC5
+U --> UC6
+U --> UC7
+U --> UC8
+U --> UC9
+U --> UC10
+U --> UC11
+U --> UC12
+
+UC9 ..> UC13 : <<include>>
+UC9 ..> UC14 : <<include>>
+@enduml

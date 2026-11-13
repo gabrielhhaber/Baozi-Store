@@ -1,0 +1,26 @@
+@startuml modelo-de-classes
+title Modelo de dados - Baozi Store (opcional)
+!pragma layout smetana
+hide methods
+
+class Cliente {
+  id : Long
+  nome : String
+  clienteDesde : LocalDate
+}
+
+class Produto {
+  id : Long
+  nome : String
+  preco : BigDecimal
+  estoque : Boolean
+}
+
+class Pedido {
+  id : Long
+  quantidade : Integer
+}
+
+Cliente "1" <-- "0..*" Pedido : faz
+Produto "1" <-- "0..*" Pedido : é comprado em
+@enduml

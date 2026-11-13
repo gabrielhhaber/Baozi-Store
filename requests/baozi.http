@@ -1,7 +1,5 @@
-@baseUrl = http://localhost:8080
-
 ### 1) Criar cliente
-POST {{baseUrl}}/clientes
+POST http://localhost:8080/clientes
 Content-Type: application/json
 
 {
@@ -9,7 +7,7 @@ Content-Type: application/json
 }
 
 ### 2) Criar produto
-POST {{baseUrl}}/produtos
+POST http://localhost:8080/produtos
 Content-Type: application/json
 
 {
@@ -19,7 +17,7 @@ Content-Type: application/json
 }
 
 ### 3) Criar pedido (cliente 1 compra 5 unidades do produto 1)
-POST {{baseUrl}}/pedidos
+POST http://localhost:8080/pedidos
 Content-Type: application/json
 
 {
@@ -29,37 +27,37 @@ Content-Type: application/json
 }
 
 ### 4) Listar clientes
-GET {{baseUrl}}/clientes
+GET http://localhost:8080/clientes
 
 ### 5) Listar produtos
-GET {{baseUrl}}/produtos
+GET http://localhost:8080/produtos
 
 ### 6) Listar pedidos
-GET {{baseUrl}}/pedidos
+GET http://localhost:8080/pedidos
 
 ### 7) Consultar cliente por id
-GET {{baseUrl}}/clientes/1
+GET http://localhost:8080/clientes/1
 
 ### 8) Consultar produto por id
-GET {{baseUrl}}/produtos/1
+GET http://localhost:8080/produtos/1
 
 ### 9) Consultar pedido por id
-GET {{baseUrl}}/pedidos/1
+GET http://localhost:8080/pedidos/1
 
 ### 10) Apagar pedido 1
-DELETE {{baseUrl}}/pedidos/1
+DELETE http://localhost:8080/pedidos/1
 
 ### 11) Conferir que o pedido 1 não existe mais (esperado: 404)
-GET {{baseUrl}}/pedidos/1
+GET http://localhost:8080/pedidos/1
 
 ### 12) Apagar produto 1
-DELETE {{baseUrl}}/produtos/1
+DELETE http://localhost:8080/produtos/1
 
 ### 13) Apagar cliente 1
-DELETE {{baseUrl}}/clientes/1
+DELETE http://localhost:8080/clientes/1
 
 ### 14) Erro de validação (esperado: 400)
-POST {{baseUrl}}/clientes
+POST http://localhost:8080/clientes
 Content-Type: application/json
 
 {

@@ -1,5 +1,5 @@
 @startuml modelo-de-classes
-title Modelo de dados - Baozi Store (opcional)
+title Modelo de dados - Baozi Store
 !pragma layout smetana
 hide methods
 
